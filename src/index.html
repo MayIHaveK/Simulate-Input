@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulate Keyboard Input</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+        #Input {
+            width: 90%;
+            height: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            resize: none;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        #Input:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+        }
+        #submitButton, #clearButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex: 1;
+            margin: 0 5px;
+        }
+
+        #submitButton:hover, #clearButton:hover {
+            background-color: #357ab8;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="Input" id="Input" placeholder="请输入内容"></textarea>
+    <div class="button-container">
+        <button id="submitButton">提交</button>
+        <button id="clearButton">清除</button>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const inputValue = document.getElementById('Input').value;
+            utools.hideMainWindowTypeString(inputValue)
+        });
+
+        document.getElementById('clearButton').addEventListener('click', function() {
+            document.getElementById('Input').value = '';
+        });
+    </script>
+</body>
+</html>

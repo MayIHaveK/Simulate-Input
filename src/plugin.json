@@ -1,0 +1,16 @@
+{
+	"name": "simulate input",
+	"version": "1.0.0",
+	"pluginName": "simulate input",
+	"description": "模拟键盘输入，用于一些禁止粘贴的场景",
+	"main": "index.html",
+	"logo": "logo.png",
+	"preload": "preload.js",
+	"features": [
+		{
+		  "code": "simulate input",
+		  "explain": "模拟键盘输入",
+			"cmds":["input", "输入"]
+		}
+	]
+}
